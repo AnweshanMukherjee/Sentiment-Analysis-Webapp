@@ -1,5 +1,4 @@
 tensorflow==2.2.0
 streamlit==0.62.1
 nltk==3.5
-pickle==4.0
 contractions==0.0.48
