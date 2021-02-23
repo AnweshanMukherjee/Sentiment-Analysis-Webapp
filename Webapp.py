@@ -13,7 +13,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import pickle
 
-model1 = keras.models.load_model('model1.h5')
+model1 = tf.keras.models.load_model('model1.h5')
 nltk.download('punkt')
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
