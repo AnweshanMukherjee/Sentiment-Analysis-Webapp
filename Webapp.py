@@ -19,8 +19,6 @@ def local_css(file_name):
 
 local_css("style.css")
 
-@st.cache(allow_output_mutation=True, max_entries=10, ttl=3600)
-
 subheading = "<div><span class='bold underline bigfont'>Probabilities and Prediction</span>:</div>"
 positive = "<div><span class='mediumfont underline'>Predicted Sentiment</span>: <span class='highlight green bold bigfont'>Positive</span</div>"
 neutral = "<div><span class='mediumfont underline'>Predicted Sentiment</span>: <span class='highlight blue bold bigfont'>Neutral</span</div>"
