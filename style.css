@@ -1,0 +1,27 @@
+.highlight {
+	border-radius: 0.4rem;
+	color: white;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+}
+.bold {
+	font-weight: 700;
+}
+.blue {
+	background-color: blue;
+}
+.red {
+	background-color: red;
+}
+.green {
+	background-color: green;
+}
+.bigfont {
+	font-size: 25px;
+}
+.mediumfont {
+	font-size: 20px;
+}
+.underline {
+	text-decoration: underline;
+}

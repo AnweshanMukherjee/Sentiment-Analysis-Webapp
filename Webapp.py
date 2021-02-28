@@ -13,6 +13,17 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import pickle
 
+def local_css(file_name):
+	with open(file_name) as f:
+		st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+
+local_css("style.css")
+
+subheading = "<div><span class='bold underline bigfont'>Probabilities and Prediction</span>:</div>"
+positive = "<div><span class='mediumfont underline'>Predicted Sentiment</span>: <span class='highlight green bold bigfont'>Positive</span</div>"
+neutral = "<div><span class='mediumfont underline'>Predicted Sentiment</span>: <span class='highlight blue bold bigfont'>Neutral</span</div>"
+negative = "<div><span class='mediumfont underline'>Predicted Sentiment</span>: <span class='highlight red bold bigfont'>Negative</span</div>"
+
 model1 = tf.keras.models.load_model('model1.h5')
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -86,18 +97,20 @@ def predict_sentiment(test_text):
 
   	# Getting prediction
 	prediction = model1.predict(sequence)
-	st.write("## Probabilities and Prediction: ")
-	st.write("## P(Negative Sentiment) = ", prediction[0][0])
-	st.write("## P(Neutral Sentiment) = ", prediction[0][1])
-	st.write("## P(Positive Sentiment) = ", prediction[0][2])
+	st.markdown(subheading, unsafe_allow_html=True)
+	st.write("### P(Negative Sentiment) = ", prediction[0][0])
+	st.write("### P(Neutral Sentiment) = ", prediction[0][1])
+	st.write("### P(Positive Sentiment) = ", prediction[0][2])
 	prediction = prediction.argmax(axis=-1)
 
+	st.write("\n\n")
+
 	if prediction == 0:
-		st.write("## Predicted Sentiment: Negative")
+		st.markdown(negative, unsafe_allow_html=True)
 	elif prediction == 1:
-		st.write("## Predicted Sentiment: Neutral")
+		st.markdown(neutral, unsafe_allow_html=True)
 	else:
-		st.write("## Predicted Sentiment: Positive")
+		st.markdown(positive, unsafe_allow_html=True)
 
 
 st.write("# Sentiment Analysis Project")
