@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from streamlit import caching
 import tensorflow as tf
 from tensorflow import keras
 import keras
@@ -12,6 +13,8 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import pickle
+
+caching.clear_cache()
 
 def local_css(file_name):
 	with open(file_name) as f:
