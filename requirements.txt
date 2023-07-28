@@ -4,4 +4,4 @@ streamlit==0.76.0
 nltk==3.5
 contractions==0.0.48
 click==8
-numpy==1.19.5
+numpy==1.18.5
